@@ -1,0 +1,36 @@
+header{
+    width: 100%;
+    z-index: 2;
+    .logo{
+      //  @include size(174px,42px);
+      width: 174px;
+      height: 42px;
+      background-image: url(../images/logo.svg);
+       a{
+        display: block;
+        height: 100%;  
+        text-indent: 110%;
+        white-space: nowrap;
+        overflow: hidden;  
+       }
+    }
+    nav::after{
+      content:'';
+      position: absolute;
+      top: 66px;
+      width: 100%;
+      height: 8px;
+      background-image: linear-gradient(90deg, $primary 50%, $secondary 50%);
+      
+    }
+}
+
+footer{
+  background-color: #1A1A1A;
+  color: #909090;
+  font-size: 12px;
+  @include pad{
+    font-size: 16px;
+  }
+}
+

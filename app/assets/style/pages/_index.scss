@@ -1,0 +1,317 @@
+.banner{
+  @include size(100%,680px);
+  background: url(../images/bg_home_mobile.jpg)center center /cover;
+
+  @include pad{
+    height: calc(100vh - 72px);
+    background-image: url(../images/bg_home.jpg);
+  }
+
+  &-content{
+    .square{
+      @include size(10px,10px);
+    }
+  }
+}
+
+section{
+  .title,
+  .title-center{
+    font-size: 28px;
+    font-weight: bold;
+    color: $white;
+    position: relative;
+    text-align: center;
+    padding-bottom: 16px;
+    @include title-bottomLine;
+  }
+  @include desktop{
+    .title{
+      text-align: left;
+      &::after{
+        @include desktop{
+          left: 0;
+          transform: unset;
+        }
+    }
+  }
+  }
+  .title-center{
+    margin-bottom: 48px;
+  }
+}
+.sellingPoint{
+  .card{
+    // height: 100%;
+    color: #909090;
+    background-color: #202020;
+    text-align: center;
+    padding: 48px 24px;
+    padding:48px 0;
+    border: none;
+    border-radius: 12px;
+    gap: 24px;
+    @include pad{
+      text-align: center;
+      background-color: transparent;
+      &-icon{
+        color: #909090;
+      }
+      &:hover{
+        color: #fff;
+        outline: solid 1px $primary;
+        background-color: #202020;
+      }
+      &:hover .card-icon{
+       @include text-gradient;
+      }
+    }
+    &-icon{
+      font-weight: bold;
+      font-size: 40px;
+      margin-bottom: 36px;
+      @include text-gradient;
+    }
+  }
+}
+
+.courseProcess{
+  .card{
+    color: #fff;
+    background-color: transparent;
+    border-radius: 12px;
+    border: solid 1px;
+    height: 100%;
+  }
+  span{
+    left: 70px;
+  }
+}
+
+.languageList{
+  .language-list{
+    overflow: hidden;
+  }
+  a{
+    border-radius: 8px;
+    &:hover{
+      color: $primary;
+      background-color: #202020;
+    }
+  }
+}
+
+.recommend{
+  .card{  
+    height: 406px;
+    border-radius: 24px;
+    &::after{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 69px;
+      width: 100%;
+      height: 1px;
+      background-color: #c1c1c1;
+    }
+    @include pad{
+      height: 451px;
+    }
+    &:hover{
+      border: solid 1px $primary;
+    }
+  } 
+  &-teacher-photo{
+    @include size(100px,100px);   
+  }
+  &-button{
+    border-radius: 8px;
+  }
+}
+
+.sellingPoints2{
+  &-item{
+    height: 615px;
+    background: url(../images/info01.jpg);
+    color: $white;
+    text-align: center;
+    &::after{
+      content:'';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(#000, 0.6);
+      opacity: 1;
+    }
+    @include desktop{
+      text-align: left;
+      color: #909090;
+      opacity: 1;
+      .title::after{
+        background-color: $white;
+      }
+      &:hover p{
+        color: $white;
+      }
+      &:hover .sellingPoints2-icon{
+        color: $primary;
+      }
+      &:hover .title::after{
+        background-color: $primary;
+      }
+      &:hover::after{
+        opacity: 0;
+      }
+    }
+  }
+  &-icon{
+    font-size: 28px;
+    color: $primary;
+    @include pad{
+      color: #909090;
+    }
+  }
+  .item2{
+    background: url(../images/info02.jpg);
+  }
+  .item3{
+    background: url(../images/info03.jpg);
+  }
+  .item4{
+    background: url(../images/info04.jpg);
+  }
+  
+}
+
+.article{
+  &-img{
+   
+    @include desktop{
+      height: 180px;
+    }
+    img{
+      @include size(100%,100%);
+      object-fit: cover;
+    }
+  }
+  .card{
+    background-color: transparent;
+  }
+  @include desktop{
+    .card::before,
+  .card::after,
+  li::before,
+  li::after{
+    content: '';
+    @include size(32px,32px);
+    position: absolute; 
+    display: none;
+  }
+  li::before{
+    top: 0;
+    left: 0; 
+    border-top: solid 1px $primary;
+    border-left: solid 1px $primary;
+    border-top-left-radius: 10px;
+  }
+  li::after{
+    border-top: solid 1px $primary;
+    border-right: solid 1px $primary;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 10px;
+  }
+  .card::before{
+    bottom: -32px;
+    left: -32px; 
+    border-bottom: solid 1px $primary;
+    border-left: solid 1px $primary;
+    border-bottom-left-radius: 10px;
+  }
+  .card::after{
+    bottom: -32px;
+    right: -32px; 
+    border-bottom: solid 1px $primary;
+    border-right: solid 1px $primary;
+    border-bottom-right-radius: 10px;
+  }
+  li:hover::before,
+  li:hover::after,
+  .card:hover::before,
+  .card:hover::after{
+    display: block;
+  }
+  }
+  
+}
+
+.studentShare{
+  background: url(../images/bg_share.jpg) center center / cover;
+  &-img{
+    img{
+      border-radius: 24px;
+    }
+    @include desktop{
+      right: -24px;
+    }
+    &::after{
+       content: '';
+    position: absolute;
+    left: -20px;
+    bottom: -20px;
+    z-index: -1;
+    @include size(100%,100%);
+    border: solid 1px #7C7E77;
+    border-radius: 24px;
+    }
+  }
+  &-pagination{
+    @include desktop{
+      margin-right: 200px;
+    }
+  }
+  .pagination-dot{
+    @include size(8px,8px);
+    border-radius: 50%;
+    &.active{
+      width: 16px;
+      border-radius: 20px;
+    }
+  }
+  &-content{
+    position: relative;
+    background-color: #fff;
+    border-radius: 24px 24px 24px 0;
+    @include desktop{
+      left: -20px;
+      bottom: -30px;
+    }
+  }
+  .studentShare-photo{
+    @include size(100px,100px);
+    overflow: hidden;
+    right: -12px;
+    
+  }
+  
+}
+.tobeTeacher{
+  max-width: 996px;
+  border-radius: 24px;
+  background-color: #202020;
+  &-icon{
+     font-size: 100px;
+     color:#c1c1c1
+  }
+  h5{
+    text-align: center;
+    @include pad{
+      text-align: left;
+    }
+  }
+  a{
+    border-radius: 10px;
+  }
+}

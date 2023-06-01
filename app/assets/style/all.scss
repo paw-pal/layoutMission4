@@ -1,0 +1,15 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "./helpers/variables";
+@import '../style/helpers/utilities1';
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+@import '../style/helpers/utilities2';
+// @import './mixin';
+@import './mixin';
+@import './base';
+
+// page
+// @import '../layout/index.scss'
+@import '../style/layout/layout.scss';
+@import '../style/pages/index';
+@import '../style/pages/course';
